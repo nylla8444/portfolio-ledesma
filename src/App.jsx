@@ -1,27 +1,21 @@
 import { Link, Outlet } from "react-router";
 import Footer from "./components/Footer";
+import Background from "./utils/Background";
 
 function App() {
   return (
-    <>
-      {/* Global Navigation */}
-      <nav className="p-4 bg-gray-800 text-white">
-        <div className="flex space-x-4">
-          <Link to="/">Home</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/about">About</Link>
-        </div>
-      </nav>
 
+    <Background>
       {/* Main Content */}
-      <main className="p-4">
+      <main className="relative z-10 text-white max-w-90dvw lg:max-w-80dvw mx-auto flex flex-col">
         <Outlet />
       </main>
 
       {/* Global Footer */}
-      <Footer />
-    </>
-  )
+      {/* <Footer /> */}
+    </Background>
+
+  );
 }
 
-export default App
+export default App;

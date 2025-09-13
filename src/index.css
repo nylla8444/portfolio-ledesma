@@ -1,1 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import "tailwindcss";
+
+@theme {
+    --color-main-black: #050505;
+    --color-section-black: #101010;
+    --color-secondary-black: #18181b;
+    --color-tertiary-black: #27272a;
+
+    --color-white-faded: #fafafa;
+
+    --color-green-1: #35ff61;
+
+    --spacing-90dvh: 90dvh;
+    --spacing-80dvh: 80dvh;
+    --spacing-70dvh: 70dvh;
+    --spacing-60dvh: 60dvh;
+
+
+    --spacing-90dvw: 90dvw;
+    --spacing-80dvw: 80dvw;
+    --spacing-70dvw: 70dvw;
+    --spacing-60dvw: 60dvw;
+
+
+    --font-doto: 'Doto', sans-serif;
+    --font-jetbrains-mono: 'JetBrains Mono', monospace;
+    --font-figtree: 'Figtree', sans-serif;
+
+}
+
+
+html,
+body {
+    background: var(--color-main-black);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    background: var(--color-main-black);
+    min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-green-1);
+    background-clip: content-box;
+}
+
+/* For Firefox */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #4a5568 transparent;
+}
