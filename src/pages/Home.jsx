@@ -2,12 +2,23 @@ import { Download, Mail, Twitter, Github, Linkedin, Facebook } from "lucide-reac
 import ProjectCard from "../components/ProjectCard";
 import projectsData from "../data/projects.json";
 import Separator from "../components/Separator";
+import socialsData from "../data/socials.json";
+import techStackData from "../data/techStack.json";
+import ColorSelect from "../components/ColorSelect";
+
+const iconMap = {
+    Mail,
+    Twitter,
+    Github,
+    Linkedin,
+    Facebook
+};
 
 export default function Home() {
     return (
 
         <div>
-            <div className="mt-10 xl:mt-20 flex flex-col lg:flex-row">
+            <section className="mt-10 flex flex-col lg:flex-row">
 
                 <section className="flex-1">
                     <div className="flex flex-col xl:flex-row items-center justify-between flex-1 w-full">
@@ -52,12 +63,14 @@ export default function Home() {
                                     <Download size={16} />
                                     Download CV
                                 </a>
+
+
                             </div>
                         </div>
                     </div>
 
                     {/* About Me */}
-                    <div className="mt-6 md:mr-5 xl:mt-10 space-y-4 xl:space-y-5 text-smxl:text-base font-figtree text-gray-400 leading-6 text-left font-normal">
+                    <div className="mt-6 md:mr-5 xl:mt-10 space-y-4 text-sm xl:text-base font-jetbrains-mono text-gray-400 leading-6 text-left font-normal">
                         <p>I&apos;m <b className="text-white">Nylla</b>, a junior developer from the Philippines who&apos;s always <b className="text-white">building</b>, <b className="text-white">experimenting</b>, and <b className="text-white">learning</b>.</p>
                         <p>I dive into code not just to make things work, but to <b className="text-white">make them meaningful.</b> </p>
                         <p>I&apos;m the kind of person who <b className="text-white">loves figuring out complex problems</b>, exploring different approaches, and pushing myself into new challenges.</p>
@@ -68,48 +81,49 @@ export default function Home() {
                     {/* Separator Line */}
                     <Separator />
 
+
                     {/* Social Links Section */}
                     <div className="mt-6 md:mr-5">
-                        <p className="text-gray-400 font-figtree text-base mb-4">
-                            Here&apos;s where you can find me <span className="text-white">(digitally)</span> if you want to say hi or connect:
+                        <p className="text-white font-doto font-bold text-lg mb-4">
+                            Here&apos;s where you can find me <span className="text-gray-400">(digitally)</span>
                         </p>
 
                         <div className="flex flex-wrap gap-3">
-                            <a href="mailto:your.email@gmail.com"
-                                className="flex items-center gap-2 bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 text-white hover:border-green-1 transition-all text-sm">
-                                <Mail size={16} />
-                                Email Me
-                            </a>
-
-                            <a href="https://www.x.com/nylla8444/" target="_blank" rel="noreferrer"
-                                className="flex items-center gap-2 bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 text-white hover:border-green-1 transition-all text-sm">
-                                <Twitter size={16} />
-                                Twitter
-                            </a>
-
-                            <a href="https://github.com/nylla8444" target="_blank" rel="noreferrer"
-                                className="flex items-center gap-2 bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 text-white hover:border-green-1 transition-all text-sm">
-                                <Github size={16} />
-                                GitHub
-                            </a>
-
-                            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer"
-                                className="flex items-center gap-2 bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 text-white hover:border-green-1 transition-all text-sm">
-                                <Linkedin size={16} />
-                                LinkedIn
-                            </a>
-
-                            <a href="https://facebook.com/yourprofile" target="_blank" rel="noreferrer"
-                                className="flex items-center gap-2 bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 text-white hover:border-green-1 transition-all text-sm">
-                                <Facebook size={16} />
-                                Facebook
-                            </a>
+                            {socialsData.map((social) => {
+                                const IconComponent = iconMap[social.icon];
+                                return (
+                                    <a
+                                        key={social.id}
+                                        href={social.url}
+                                        target={social.id === "email" ? "_self" : "_blank"}
+                                        rel={social.id === "email" ? undefined : "noreferrer"}
+                                        className="flex items-center gap-2 bg-secondary-black border border-green-1 rounded-lg px-3 py-2 text-white transition-all text-sm"
+                                        style={{
+                                            boxShadow: `2px 2px 0px 0px var(--color-green-1)`
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.color = 'var(--color-green-1)';
+                                            e.currentTarget.style.boxShadow = '1px 1px 0px 0px var(--color-green-1)';
+                                            e.currentTarget.style.transform = 'translate(2px, 2px)';
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.color = 'white';
+                                            e.currentTarget.style.boxShadow = '2px 2px 0px 0px var(--color-green-1)';
+                                            e.currentTarget.style.transform = 'translate(0px, 0px)';
+                                        }}
+                                    >
+                                        <IconComponent size={16} />
+                                        {social.label}
+                                    </a>
+                                );
+                            })}
                         </div>
                     </div>
 
-
                     {/* Separator Line */}
                     <Separator />
+
+
 
                 </section >
 
@@ -119,11 +133,11 @@ export default function Home() {
                         {/* Section Header */}
                         <div className="mb-4 flex">
                             <h2 className="text-white font-doto font-bold text-lg mr-5">Some things I've built</h2>
-                            <p className="text-gray-400 text-sm mt-1">A showcase of my projects</p>
+                            <p className="text-gray-400 text-sm font-jetbrains-mono mt-1">A showcase of my projects</p>
                         </div>
 
                         {/* Scrollable Projects Container */}
-                        <div className="flex-1 overflow-y-auto max-h-[70vh] space-y-4 pr-2 custom-scrollbar">
+                        <div className="flex-1 overflow-y-auto max-h-[60vh] space-y-4 pr-2 custom-scrollbar">
                             {projectsData.map(project => (
                                 <ProjectCard key={project.id} project={project} />
                             ))}
@@ -132,14 +146,52 @@ export default function Home() {
                     </div>
                 </section>
 
-            </div >
+                {/* Separator Line */}
+                <Separator className={"block lg:hidden"} />
+            </section>
 
-            <div>
+            <section>
 
+                {/* Tech Stack Section */}
+                <div className="mt-5">
+                    <p className="text-white font-doto font-bold text-lg mb-4">
+                        Technologies I work with:
+                    </p>
 
+                    <div className="flex flex-wrap gap-3">
+                        {techStackData.map((tech) => (
+                            <div
+                                key={tech.id}
+                                className="flex items-center gap-2 bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 text-white transition-all text-sm"
+                                style={{
+                                    boxShadow: `1px 1px 0px 0px var(--color-green-1)`
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translate(1px, 1px)';
+                                    e.currentTarget.style.boxShadow = '0px 0px 0px 0px var(--color-green-1)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translate(0px, 0px)';
+                                    e.currentTarget.style.boxShadow = '1px 1px 0px 0px var(--color-green-1)';
+                                }}
+                            >
+                                <img
+                                    src={tech.icon}
+                                    alt={tech.name}
+                                    className="w-4 h-4"
+                                />
+                                {tech.name}
+                            </div>
+                        ))}
+                    </div>
+                </div>
 
+            </section>
+
+            <div className="fixed top-6 right-4 z-50">
+                <ColorSelect />
             </div>
-        </div>
+        </div >
 
     );
 }

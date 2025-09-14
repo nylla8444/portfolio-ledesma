@@ -1,6 +1,8 @@
 import { Link } from "react-router";
 import { Github, ExternalLink } from "lucide-react";
 
+
+// TODO: improve layout in mobile screens
 export default function ProjectCard({ project }) {
     return (
         <div className="bg-main-black border border-tertiary-black rounded-lg p-4 hover:border-green-1 transition-all duration-300 group flex items-center gap-4">
