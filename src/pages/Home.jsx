@@ -1,24 +1,21 @@
-import { Download, Mail, Twitter, Github, Linkedin, Facebook } from "lucide-react";
+import { Download } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
 import projectsData from "../data/projects.json";
 import Separator from "../components/Separator";
-import socialsData from "../data/socials.json";
+
 import techStackData from "../data/techStack.json";
 import ColorSelect from "../components/ColorSelect";
+import GitHubStats from "../components/GitHubStats";
+import SocialLinks from "../components/SocialLinks";
 
-const iconMap = {
-    Mail,
-    Twitter,
-    Github,
-    Linkedin,
-    Facebook
-};
+
+
 
 export default function Home() {
     return (
-
-        <div>
-            <section className="mt-10 flex flex-col lg:flex-row">
+        <div className="overflow-hidden p-4 pt-10">
+            {/* Personal Info and Projects */}
+            <section className=" flex flex-col lg:flex-row">
 
                 <section className="flex-1">
                     <div className="flex flex-col xl:flex-row items-center justify-between flex-1 w-full">
@@ -33,20 +30,20 @@ export default function Home() {
 
                             {/* Name and Twitter Handle */}
                             <div className="pl-4">
-                                <h1 className="font-doto font-bold xl:font-extrabold tracking-wider text-2xl xl:text-3xl leading-8 text-white-faded">NYLLA</h1>
+                                <h1 className="font-doto font-extrabold xl:font-extrabold tracking-wider text-2xl xl:text-3xl leading-8 text-white-faded">NYLLA</h1>
                                 <a href="https://www.x.com/nylla8444/" target="_blank" rel="noreferrer">
                                     <p className="text-gray-500 hover:text-gray-300 transition-colors duration-300 cursor-pointer
-                                        text-sm font-jetbrains-mono mt-1
-                            ">@nylla8444</p>
+                                                text-sm font-jetbrains-mono mt-1
+                                    ">@nylla8444</p>
                                 </a>
 
                             </div>
                         </div>
 
 
-                        <div className="flex items-center justify-center">
+                        <div className="flex">
                             {/* Availability Status */}
-                            <div className="xl:mr-10 flex gap-4">
+                            <div className="flex items-center justify-center gap-2">
                                 <div className="flex items-center bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 gap-2">
                                     <div className="relative">
                                         <div className="w-3 h-3 bg-green-1 rounded-full animate-pulse"></div>
@@ -57,9 +54,9 @@ export default function Home() {
 
                                 {/* Download CV */}
                                 <a href="/" target="_blank" rel="noopener noreferrer"
-                                    className="flex items-center bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 text-white font-medium text-xs gap-2 
-                                shadow transition hover:border-green-1 focus:outline-none
-                                whitespace-nowrap">
+                                    className="flex items-center justify-center bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 text-white font-medium text-xs gap-2
+                                        shadow transition hover:border-green-1 focus:outline-none
+                                        whitespace-nowrap">
                                     <Download size={16} />
                                     Download CV
                                 </a>
@@ -78,49 +75,12 @@ export default function Home() {
                         <p>Most days you&apos;ll find me <b className="text-white">learning</b>, <b className="text-white">tinkering</b>, and <b className="text-white">problem-solving</b>, always driven by curiosity and the belief there&apos;s a <b className="text-white">smarter way forward</b>.</p>
                     </div>
 
-                    {/* Separator Line */}
+
                     <Separator />
 
+                    {/* Social Links */}
+                    <SocialLinks className={"mt-6 md:mr-5 "} />
 
-                    {/* Social Links Section */}
-                    <div className="mt-6 md:mr-5">
-                        <p className="text-white font-doto font-bold text-lg mb-4">
-                            Here&apos;s where you can find me <span className="text-gray-400">(digitally)</span>
-                        </p>
-
-                        <div className="flex flex-wrap gap-3">
-                            {socialsData.map((social) => {
-                                const IconComponent = iconMap[social.icon];
-                                return (
-                                    <a
-                                        key={social.id}
-                                        href={social.url}
-                                        target={social.id === "email" ? "_self" : "_blank"}
-                                        rel={social.id === "email" ? undefined : "noreferrer"}
-                                        className="flex items-center gap-2 bg-secondary-black border border-green-1 rounded-lg px-3 py-2 text-white transition-all text-sm"
-                                        style={{
-                                            boxShadow: `2px 2px 0px 0px var(--color-green-1)`
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            e.currentTarget.style.color = 'var(--color-green-1)';
-                                            e.currentTarget.style.boxShadow = '1px 1px 0px 0px var(--color-green-1)';
-                                            e.currentTarget.style.transform = 'translate(2px, 2px)';
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.currentTarget.style.color = 'white';
-                                            e.currentTarget.style.boxShadow = '2px 2px 0px 0px var(--color-green-1)';
-                                            e.currentTarget.style.transform = 'translate(0px, 0px)';
-                                        }}
-                                    >
-                                        <IconComponent size={16} />
-                                        {social.label}
-                                    </a>
-                                );
-                            })}
-                        </div>
-                    </div>
-
-                    {/* Separator Line */}
                     <Separator />
 
 
@@ -128,8 +88,8 @@ export default function Home() {
                 </section >
 
                 {/* Projects Section - Scrollable */}
-                <section className="flex-1 ml-0 md:ml-6 mt-6 lg:mt-0">
-                    <div className="h-full flex flex-col">
+                <section className="flex-1 ml-0 md:ml-5 mt-6 lg:mt-0 ">
+                    <div className=" flex flex-col">
                         {/* Section Header */}
                         <div className="mb-4 flex">
                             <h2 className="text-white font-doto font-bold text-lg mr-5">Some things I've built</h2>
@@ -137,22 +97,30 @@ export default function Home() {
                         </div>
 
                         {/* Scrollable Projects Container */}
-                        <div className="flex-1 overflow-y-auto max-h-[60vh] space-y-4 pr-2 custom-scrollbar">
+                        <div className="flex-1 overflow-y-auto max-h-50dvh md:max-h-460 space-y-4 pr-2 custom-scrollbar">
                             {projectsData.map(project => (
                                 <ProjectCard key={project.id} project={project} />
                             ))}
                         </div>
 
                     </div>
+
+                    {/* TEST- GitHubStats */}
+                    <div className="mt-5">
+                        <GitHubStats />
+
+                    </div>
                 </section>
 
-                {/* Separator Line */}
+
                 <Separator className={"block lg:hidden"} />
+
+
             </section>
 
-            <section>
 
-                {/* Tech Stack Section */}
+            {/* Tech Stack Section */}
+            <section>
                 <div className="mt-5">
                     <p className="text-white font-doto font-bold text-lg mb-4">
                         Technologies I work with:
@@ -186,6 +154,8 @@ export default function Home() {
                     </div>
                 </div>
 
+
+
             </section>
 
             <div className="fixed top-6 right-4 z-50">
@@ -195,3 +165,6 @@ export default function Home() {
 
     );
 }
+
+
+
