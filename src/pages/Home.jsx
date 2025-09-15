@@ -7,9 +7,9 @@ import techStackData from "../data/techStack.json";
 import ColorSelect from "../components/ColorSelect";
 import GitHubStats from "../components/GitHubStats";
 import SocialLinks from "../components/SocialLinks";
+import TechIcon from "../components/TechIcon";
 
-
-
+import githubProfile from "../assets/github-profile.jpg";
 
 export default function Home() {
     return (
@@ -23,7 +23,7 @@ export default function Home() {
                         <div className="flex items-center mb-5 xl:mb-0">
                             {/* GitHub Profile Picture */}
                             <a href="https://github.com/nylla8444" target="_blank" rel="noreferrer">
-                                <img src="/src/assets/github-profile.jpg"
+                                <img src={githubProfile}
                                     className="rounded-full size-20 hover:border-2 border-green-1 transition-colors duration-300 cursor-pointer"
                                     alt="my github profile" />
                             </a>
@@ -77,21 +77,16 @@ export default function Home() {
 
 
                     <Separator />
-
                     {/* Social Links */}
                     <SocialLinks className={"mt-6 md:mr-5 "} />
-
                     <Separator />
-
-
-
                 </section >
 
                 {/* Projects Section - Scrollable */}
                 <section className="flex-1 ml-0 md:ml-5 mt-6 lg:mt-0 ">
                     <div className=" flex flex-col">
                         {/* Section Header */}
-                        <div className="mb-4 flex">
+                        <div className="mb-2 flex">
                             <h2 className="text-white font-doto font-bold text-lg mr-5">Some things I've built</h2>
                             <p className="text-gray-400 text-sm font-jetbrains-mono mt-1">A showcase of my projects</p>
                         </div>
@@ -111,17 +106,13 @@ export default function Home() {
 
                     </div>
                 </section>
-
-
                 <Separator className={"block lg:hidden"} />
-
-
             </section>
 
 
             {/* Tech Stack Section */}
             <section>
-                <div className="mt-5">
+                <div className="mt-4 lg:mt-0">
                     <p className="text-white font-doto font-bold text-lg mb-4">
                         Technologies I work with:
                     </p>
@@ -143,11 +134,7 @@ export default function Home() {
                                     e.currentTarget.style.boxShadow = '1px 1px 0px 0px var(--color-green-1)';
                                 }}
                             >
-                                <img
-                                    src={tech.icon}
-                                    alt={tech.name}
-                                    className="w-4 h-4"
-                                />
+                                <TechIcon id={tech.id} name={tech.name} />
                                 {tech.name}
                             </div>
                         ))}
@@ -156,7 +143,7 @@ export default function Home() {
 
 
 
-            </section>
+            </section >
 
             <div className="fixed top-6 right-4 z-50">
                 <ColorSelect />
@@ -167,4 +154,9 @@ export default function Home() {
 }
 
 
+
+
+// TODO: put click sfx on socials
+// TODO: preview on hover on each projects
+// TODO: make Technologies Draggable just for fun
 

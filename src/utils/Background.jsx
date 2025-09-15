@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
 const backgroundThemes = {
-    green: "radial-gradient(125% 125% at 50% 10%, #072607 0%, #000000 40%, #072607 100%)",
-    blue: "radial-gradient(125% 125% at 50% 10%, #070726 0%, #000000 40%, #070726 100%)",
-    red: "radial-gradient(125% 125% at 50% 10%, #260707 0%, #000000 40%, #260707 100%)",
-    yellow: "radial-gradient(125% 125% at 50% 10%, #262607 0%, #000000 40%, #262607 100%)"
+    green: "radial-gradient(125% 125% at 50% 10%, #072607 0%, #000000 30%, #072607 100%)",
+    blue: "radial-gradient(125% 125% at 50% 10%, #070726 0%, #000000 30%, #070726 100%)",
+    red: "radial-gradient(125% 125% at 50% 10%, #260707 0%, #000000 30%, #260707 100%)",
+    yellow: "radial-gradient(125% 125% at 50% 10%, #262607 0%, #000000 30%, #262607 100%)"
 };
 
 export default function Background({ children }) {
