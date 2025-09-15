@@ -15,9 +15,9 @@
             "Full Stack",
             "Animal Welfare"
         ],
-        "sourceCodeUrl": "",
-        "demoUrl": "",
-        "thumbnail": "",
+        "sourceCodeUrl": "https://github.com/nylla8444/strayspot",
+        "demoUrl": "https://github.com/nylla8444/strayspot",
+        "thumbnail": "/",
         "status": "completed",
         "features": [
             "Multi-role authentication and secure user management",
@@ -41,9 +41,9 @@
             "Web App",
             "Health Monitoring"
         ],
-        "sourceCodeUrl": "",
-        "demoUrl": "",
-        "thumbnail": "",
+        "sourceCodeUrl": "https://github.com/nylla8444/DreamCatcher",
+        "demoUrl": "https://github.com/nylla8444/DreamCatcher",
+        "thumbnail": "/",
         "status": "completed",
         "features": [
             "Real-time temperature and motion monitoring via Arduino sensors",
@@ -67,9 +67,9 @@
             "extension",
             "security"
         ],
-        "sourceCodeUrl": "",
-        "demoUrl": "",
-        "thumbnail": "",
+        "sourceCodeUrl": "https://github.com/nylla8444/Cloaxa",
+        "demoUrl": "https://github.com/nylla8444/Cloaxa",
+        "thumbnail": "/",
         "status": "completed",
         "features": [
             "Tor-based IP masking and routing",
@@ -93,9 +93,9 @@
             "Utility",
             "Productivity"
         ],
-        "sourceCodeUrl": "",
-        "demoUrl": "",
-        "thumbnail": "",
+        "sourceCodeUrl": "https://github.com/nylla8444/TODO-CLI-Tool",
+        "demoUrl": "https://github.com/nylla8444/TODO-CLI-Tool",
+        "thumbnail": "/",
         "status": "completed",
         "features": [
             "Create, read, update, and delete tasks via command-line interface",
@@ -119,9 +119,9 @@
             "automation",
             "web"
         ],
-        "sourceCodeUrl": "",
-        "demoUrl": "",
-        "thumbnail": "",
+        "sourceCodeUrl": "https://github.com/nylla8444/DOM-Remover",
+        "demoUrl": "https://github.com/nylla8444/DOM-Remover",
+        "thumbnail": "/",
         "status": "completed",
         "features": [
             "Save and manage multiple CSS selectors for element removal",
@@ -131,7 +131,7 @@
     },
     {
         "id": "p6",
-        "title": "Interactive Bingo Game with Text-to-Speech",
+        "title": "Bingo with Text-to-Speech",
         "description": "A modern web-based Bingo game featuring 19 different winning patterns and integrated text-to-speech functionality for automated number calling. Built with vanilla JavaScript and neumorphism design principles, offering customizable audio controls and responsive gameplay.",
         "date": "2025-09-15",
         "techStack": [
@@ -145,9 +145,9 @@
             "Web Application",
             "Entertainment"
         ],
-        "sourceCodeUrl": "",
-        "demoUrl": "",
-        "thumbnail": "",
+        "sourceCodeUrl": "https://github.com/nylla8444/bingo-card",
+        "demoUrl": "https://github.com/nylla8444/bingo-card",
+        "thumbnail": "/",
         "status": "completed",
         "features": [
             "19 unique Bingo patterns including traditional lines, shapes, and creative designs",
