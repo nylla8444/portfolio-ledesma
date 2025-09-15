@@ -2,6 +2,10 @@
 @import "tailwindcss";
 
 @theme {
+    --font-doto: 'Doto', sans-serif;
+    --font-jetbrains-mono: 'JetBrains Mono', monospace;
+    --font-figtree: 'Figtree', sans-serif;
+
     --color-main-black: #050505;
     --color-section-black: #101010;
     --color-secondary-black: #18181b;
@@ -14,21 +18,32 @@
     --color-red-1: #ff3561;
     --color-yellow-1: #ffff35;
 
+    --spacing-460: 28.75rem;
+    --spacing-500: 31.25rem;
+    --spacing-560: 35rem;
+
     --spacing-90dvh: 90dvh;
     --spacing-80dvh: 80dvh;
     --spacing-70dvh: 70dvh;
     --spacing-60dvh: 60dvh;
-
+    --spacing-50dvh: 50dvh;
 
     --spacing-90dvw: 90dvw;
     --spacing-80dvw: 80dvw;
+    --spacing-75dvw: 75dvw;
     --spacing-70dvw: 70dvw;
+    --spacing-65dvw: 65dvw;
     --spacing-60dvw: 60dvw;
+    --spacing-50dvw: 50dvw;
 
 
-    --font-doto: 'Doto', sans-serif;
-    --font-jetbrains-mono: 'JetBrains Mono', monospace;
-    --font-figtree: 'Figtree', sans-serif;
+    --spacing-70vh: 70vh;
+    --spacing-60vh: 60vh;
+    --spacing-50vh: 50vh;
+
+    --spacing-70vw: 70vw;
+    --spacing-60vw: 60vw;
+
 
 }
 
@@ -46,6 +61,35 @@ body {
     min-height: 100vh;
 }
 
+/* Global Custom Scrollbar - Applied to all elements */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-tertiary-black) transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--color-tertiary-black);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--color-green-1);
+}
+
+*::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
 /* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
     width: 8px;
@@ -57,10 +101,11 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #4a5568;
+    background: var(--color-tertiary-black);
     border-radius: 10px;
     border: 2px solid transparent;
     background-clip: content-box;
+    transition: all 0.2s ease;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
@@ -71,5 +116,5 @@ body {
 /* For Firefox */
 .custom-scrollbar {
     scrollbar-width: thin;
-    scrollbar-color: #4a5568 transparent;
+    scrollbar-color: var(--color-tertiary-black) transparent;
 }
