@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router";
+import { useParams, Link } from "react-router-dom";
 import { Github, ExternalLink, ArrowLeft, Calendar, CheckCircle, Clock, AlertCircle } from "lucide-react";
 import projects from "../data/projects.json";
 import ColorSelect from "./ColorSelect";
