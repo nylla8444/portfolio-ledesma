@@ -1,0 +1,158 @@
+[
+    {
+        "id": "p1",
+        "title": "StraySpot",
+        "description": "StraySpot is a full-stack web platform designed to streamline animal adoption and shelter management, connecting rescue organizations with potential adopters through a secure, feature-rich system. The application offers advanced pet management, digital adoption workflows, and administrative tools to improve transparency and efficiency in animal welfare operations.",
+        "date": "2025-09-15",
+        "techStack": [
+            "JavaScript",
+            "Next.js",
+            "MongoDB",
+            "TailwindCSS"
+        ],
+        "tags": [
+            "Web App",
+            "Full Stack",
+            "Animal Welfare"
+        ],
+        "sourceCodeUrl": "",
+        "demoUrl": "",
+        "thumbnail": "",
+        "status": "completed",
+        "features": [
+            "Multi-role authentication and secure user management",
+            "Advanced pet profile creation and search system",
+            "Streamlined digital adoption application workflow"
+        ]
+    },
+    {
+        "id": "p2",
+        "title": "DreamCatcher",
+        "description": "DreamCatcher is an Arduino-powered infant monitoring system integrated with a Node.js web application, providing real-time temperature and motion tracking, historical data visualization, and automated Telegram notifications for caregivers. The project combines hardware sensor data acquisition with a modern web dashboard for enhanced child safety and parental awareness.",
+        "date": "2025-08-30",
+        "techStack": [
+            "Arduino",
+            "Node.js",
+            "Express",
+            "Socket.IO"
+        ],
+        "tags": [
+            "IoT",
+            "Web App",
+            "Health Monitoring"
+        ],
+        "sourceCodeUrl": "",
+        "demoUrl": "",
+        "thumbnail": "",
+        "status": "completed",
+        "features": [
+            "Real-time temperature and motion monitoring via Arduino sensors",
+            "Interactive web dashboard with historical data charts and user profiles",
+            "Automated Telegram notifications for critical events"
+        ]
+    },
+    {
+        "id": "p3",
+        "title": "Cloaxa",
+        "description": "Cloaxa is a Chromium browser extension designed to enhance user privacy by routing web traffic through the Tor network, blocking trackers, and providing a kill switch to prevent accidental IP leaks. The extension offers persistent Tor routing, advanced anti-fingerprinting techniques, and an intuitive interface for privacy management.",
+        "date": "2025-08-30",
+        "techStack": [
+            "JavaScript",
+            "Chrome Extension Manifest V3",
+            "Tor",
+            "Tailwind CSS"
+        ],
+        "tags": [
+            "privacy",
+            "extension",
+            "security"
+        ],
+        "sourceCodeUrl": "",
+        "demoUrl": "",
+        "thumbnail": "",
+        "status": "completed",
+        "features": [
+            "Tor-based IP masking and routing",
+            "Network kill switch for privacy protection",
+            "Comprehensive anti-fingerprinting measures"
+        ]
+    },
+    {
+        "id": "p4",
+        "title": "Rust ToDo CLI Tool",
+        "description": "A robust command-line application for managing personal tasks, featuring full CRUD operations and persistent storage in JSON. The project demonstrates modular Rust design, leveraging Clap for argument parsing and Serde for seamless data serialization, making it an ideal foundation for learning or extending CLI-based productivity tools.",
+        "date": "2025-09-15",
+        "techStack": [
+            "Rust",
+            "Clap",
+            "Serde",
+            "JSON"
+        ],
+        "tags": [
+            "CLI",
+            "Utility",
+            "Productivity"
+        ],
+        "sourceCodeUrl": "",
+        "demoUrl": "",
+        "thumbnail": "",
+        "status": "completed",
+        "features": [
+            "Create, read, update, and delete tasks via command-line interface",
+            "Persistent task storage using JSON files",
+            "Modular architecture with clear separation of concerns"
+        ]
+    },
+    {
+        "id": "p5",
+        "title": "DOM Remover Extension",
+        "description": "A Chrome/Edge browser extension that enables users to save CSS selectors and automatically or instantly remove matching elements from any webpage. It features a popup interface for managing selectors, toggling automatic removal, and importing/exporting selector lists for convenience.",
+        "date": "2025-09-15",
+        "techStack": [
+            "JavaScript",
+            "Chrome Extension Manifest V3",
+            "HTML",
+            "CSS"
+        ],
+        "tags": [
+            "browser-extension",
+            "automation",
+            "web"
+        ],
+        "sourceCodeUrl": "",
+        "demoUrl": "",
+        "thumbnail": "",
+        "status": "completed",
+        "features": [
+            "Save and manage multiple CSS selectors for element removal",
+            "Instantly remove elements or enable automatic removal on page load",
+            "Import and export selector lists for sharing and backup"
+        ]
+    },
+    {
+        "id": "p6",
+        "title": "Interactive Bingo Game with Text-to-Speech",
+        "description": "A modern web-based Bingo game featuring 19 different winning patterns and integrated text-to-speech functionality for automated number calling. Built with vanilla JavaScript and neumorphism design principles, offering customizable audio controls and responsive gameplay.",
+        "date": "2025-09-15",
+        "techStack": [
+            "HTML5",
+            "JavaScript",
+            "CSS3",
+            "Web Speech API"
+        ],
+        "tags": [
+            "Game",
+            "Web Application",
+            "Entertainment"
+        ],
+        "sourceCodeUrl": "",
+        "demoUrl": "",
+        "thumbnail": "",
+        "status": "completed",
+        "features": [
+            "19 unique Bingo patterns including traditional lines, shapes, and creative designs",
+            "Text-to-speech integration with voice selection and audio control customization",
+            "Neumorphism UI design with responsive layout and toggleable configuration panel"
+        ]
+    }
+]

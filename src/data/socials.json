@@ -1,0 +1,32 @@
+[
+    {
+        "id": "email",
+        "label": "Email Me",
+        "url": "mailto:ledesmaallynralf@gmail.com",
+        "icon": "Mail"
+    },
+    {
+        "id": "twitter",
+        "label": "Twitter",
+        "url": "https://www.x.com/nylla8444/",
+        "icon": "Twitter"
+    },
+    {
+        "id": "github",
+        "label": "GitHub",
+        "url": "https://github.com/nylla8444",
+        "icon": "Github"
+    },
+    {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/ledesmaar/",
+        "icon": "Linkedin"
+    },
+    {
+        "id": "facebook",
+        "label": "Facebook",
+        "url": "https://www.facebook.com/allyn.ralf.ledesma.2023",
+        "icon": "Facebook"
+    }
+]
