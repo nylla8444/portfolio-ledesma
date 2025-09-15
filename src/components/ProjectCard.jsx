@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import thumbnailMap from "../utils/ProjectThumbnails";
 
