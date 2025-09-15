@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router";
 import { Github, ExternalLink, ArrowLeft, Calendar, CheckCircle, Clock, AlertCircle } from "lucide-react";
 import projects from "../data/projects.json";
 import ColorSelect from "./ColorSelect";
+import thumbnailMap from "../utils/ProjectThumbnails";
 
 const statusConfig = {
     completed: { icon: CheckCircle, color: 'text-green-1', bg: 'bg-green-1/10' },
@@ -32,6 +33,10 @@ function ProjectDetail() {
     }
 
     const StatusIcon = statusConfig[project.status]?.icon || CheckCircle;
+
+    const thumbnailSrc = project.id && thumbnailMap[project.id]
+        ? thumbnailMap[project.id]
+        : null;
 
     return (
         <div className="max-w-4xl mx-auto mt-5">
@@ -99,14 +104,20 @@ function ProjectDetail() {
             </div>
 
             {/* Project Image */}
-            {project.thumbnail && (
+            {thumbnailSrc && (
                 <div className="mb-8">
                     <div className="bg-secondary-black border border-tertiary-black rounded-lg overflow-hidden">
-                        <img
-                            src={project.thumbnail}
-                            alt={project.title}
-                            className="w-full h-60 md:h-80 object-cover"
-                        />
+                        <div className="relative aspect-video w-full">
+                            <img
+                                src={thumbnailSrc}
+                                alt={project.title}
+                                className="absolute inset-0 w-full h-full object-contain"
+                                onError={(e) => {
+                                    console.error("Failed to load image:", thumbnailSrc);
+                                    e.target.style.display = 'none';
+                                }}
+                            />
+                        </div>
                     </div>
                 </div>
             )}

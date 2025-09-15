@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getGitHubContributions, getGitHubProfile } from '../services/githubApi';
-import { Github, GitCommit } from 'lucide-react';
+import { Github, GitCommit, ChevronLeft, ChevronRight } from 'lucide-react';
 
 
 export default function GitHubStats() {
@@ -63,7 +63,7 @@ export default function GitHubStats() {
 
     if (loading) {
         return (
-            <div className="bg-secondary-black border border-tertiary-black rounded-lg p-2 w-full max-w-560">
+            <div className="bg-secondary-black/50 border border-tertiary-black rounded-lg p-3 w-full lg:max-w-560 mt-8 lg:mt-0">
                 <div className="animate-pulse">
                     <div className="h-4 bg-tertiary-black rounded w-1/2 mb-4"></div>
                     <div className="overflow-x-auto">
@@ -84,9 +84,15 @@ export default function GitHubStats() {
 
     if (error || !contributions) {
         return (
-            <div className="bg-secondary-black border border-tertiary-black rounded-lg p-2 text-center w-full max-w-560">
+            <div className="bg-secondary-black/50 border border-tertiary-black rounded-lg p-3 text-center w-full lg:max-w-560 mt-8 lg:mt-0">
                 <Github className="w-8 h-8 text-gray-400 mx-auto mb-2" />
                 <p className="text-gray-400 text-sm">Unable to load GitHub stats</p>
+                <button
+                    className="mt-3 px-3 py-1 bg-tertiary-black hover:bg-gray-700 transition-colors rounded text-xs"
+                    onClick={() => window.location.reload()}
+                >
+                    Retry
+                </button>
             </div>
         );
     }
@@ -106,9 +112,9 @@ export default function GitHubStats() {
     const validWeeks = contributions.contributionCalendar.weeks;
 
     return (
-        <div className="bg-secondary-black border border-tertiary-black rounded-lg p-2 w-full max-w-560 mt-8 md:mt-0">
+        <div className="bg-secondary-black/50 border border-tertiary-black rounded-lg p-3 w-full lg:max-w-560 mt-8 lg:mt-0">
             {/* Header - Responsive */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
                 <div className="flex items-center gap-2">
                     <Github className="w-5 h-5 text-green-1" />
                     <h3 className="text-white font-doto font-bold">GitHub Activity</h3>
@@ -118,40 +124,48 @@ export default function GitHubStats() {
                 </div>
             </div>
 
-            {/* Graph Container - Table-based with horizontal scrolling */}
-            <div className="overflow-x-auto pb-1">
-                <table className="border-spacing-1 border-separate" style={{ minWidth: '720px' }}>
-                    <tbody>
-                        {/* Create 7 rows for days of the week (0 = Sunday, 6 = Saturday) */}
-                        {Array(7).fill(0).map((_, dayOfWeek) => (
-                            <tr key={dayOfWeek}>
-                                {validWeeks.map((week, weekIndex) => {
-                                    // Find the day data for this position
-                                    const dayData = week.contributionDays.find(d =>
-                                        new Date(d.date).getDay() === dayOfWeek
-                                    );
+            {/* Graph Container with subtle improvements */}
+            <div className="border border-tertiary-black rounded p-2 mb-1 overflow-hidden">
+                <div className="overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-tertiary-black scrollbar-track-transparent">
+                    <table className="border-spacing-1 border-separate" style={{ minWidth: '720px' }}>
+                        <tbody>
+                            {/* Create 7 rows for days of the week */}
+                            {Array(7).fill(0).map((_, dayOfWeek) => (
+                                <tr key={dayOfWeek}>
+                                    {validWeeks.map((week, weekIndex) => {
+                                        // Find the day data for this position
+                                        const dayData = week.contributionDays.find(d =>
+                                            new Date(d.date).getDay() === dayOfWeek
+                                        );
 
-                                    return (
-                                        <td key={weekIndex} className="p-0">
-                                            {dayData ? (
-                                                <div
-                                                    className={`w-2.5 h-2.5 rounded-sm ${getContributionColor(dayData.contributionLevel)} cursor-pointer hover:ring-1 hover:ring-green-1`}
-                                                    title={`${dayData.contributionCount} contributions on ${new Date(dayData.date).toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}`}
-                                                />
-                                            ) : (
-                                                <div className="w-2.5 h-2.5 rounded-sm bg-transparent" />
-                                            )}
-                                        </td>
-                                    );
-                                })}
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                                        return (
+                                            <td key={weekIndex} className="p-0">
+                                                {dayData ? (
+                                                    <div
+                                                        className={`w-2.5 h-2.5 rounded-sm ${getContributionColor(dayData.contributionLevel)} cursor-pointer hover:ring-1 hover:ring-green-1 transition-colors`}
+                                                        title={`${dayData.contributionCount} contributions on ${new Date(dayData.date).toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}`}
+                                                    />
+                                                ) : (
+                                                    <div className="w-2.5 h-2.5 rounded-sm bg-transparent" />
+                                                )}
+                                            </td>
+                                        );
+                                    })}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+
+                {/* Subtle scroll indicator */}
+                <div className="flex justify-center mt-1 text-xs text-gray-500 opacity-70">
+                    <ChevronLeft className="h-3 w-3" />
+                    <ChevronRight className="h-3 w-3" />
+                </div>
             </div>
 
             {/* Legend - Responsive */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mt-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mt-3 pt-1 border-t border-tertiary-black/30">
                 <div className="flex items-center gap-2 text-sm">
                     <GitCommit size={14} className="text-green-1" />
                     <span className="text-white font-medium">{profile?.public_repos || 0}</span>
