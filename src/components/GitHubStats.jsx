@@ -101,10 +101,10 @@ export default function GitHubStats() {
     const getContributionColor = (level) => {
         switch (level) {
             case 'NONE': return 'bg-tertiary-black';
-            case 'FIRST_QUARTILE': return 'bg-green-1/30';
-            case 'SECOND_QUARTILE': return 'bg-green-1/50';
-            case 'THIRD_QUARTILE': return 'bg-green-1/70';
-            case 'FOURTH_QUARTILE': return 'bg-green-1';
+            case 'FIRST_QUARTILE': return 'bg-[color-mix(in_srgb,var(--theme-primary)_30%,transparent)]';
+            case 'SECOND_QUARTILE': return 'bg-[color-mix(in_srgb,var(--theme-primary)_50%,transparent)]';
+            case 'THIRD_QUARTILE': return 'bg-[color-mix(in_srgb,var(--theme-primary)_70%,transparent)]';
+            case 'FOURTH_QUARTILE': return 'bg-[var(--theme-primary)]';
             default: return 'bg-tertiary-black';
         }
     };
@@ -117,7 +117,7 @@ export default function GitHubStats() {
             {/* Header - Responsive */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
                 <div className="flex items-center gap-2">
-                    <Github className="w-5 h-5 text-green-1" />
+                    <Github className="w-5 h-5 text-[var(--theme-primary)]" />
                     <h3 className="text-white font-doto font-bold">GitHub Activity</h3>
                 </div>
                 <div className="text-sm text-gray-400">
@@ -143,7 +143,7 @@ export default function GitHubStats() {
                                             <td key={weekIndex} className="p-0">
                                                 {dayData ? (
                                                     <div
-                                                        className={`w-2.5 h-2.5 rounded-sm ${getContributionColor(dayData.contributionLevel)} cursor-pointer hover:ring-1 hover:ring-green-1 transition-colors`}
+                                                        className={`w-2.5 h-2.5 rounded-sm ${getContributionColor(dayData.contributionLevel)} cursor-pointer hover:ring-1 hover:ring-[var(--theme-primary)] transition-colors`}
                                                         title={`${dayData.contributionCount} contributions on ${new Date(dayData.date).toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}`}
                                                     />
                                                 ) : (
@@ -168,7 +168,7 @@ export default function GitHubStats() {
             {/* Legend - Responsive */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mt-3 pt-1 border-t border-tertiary-black/30">
                 <div className="flex items-center gap-2 text-sm">
-                    <GitCommit size={14} className="text-green-1" />
+                    <GitCommit size={14} className="text-[var(--theme-primary)]" />
                     <span className="text-white font-medium">{profile?.public_repos || 0}</span>
                     <span className="text-gray-400">repositories</span>
                 </div>
@@ -177,10 +177,10 @@ export default function GitHubStats() {
                     <span>Less</span>
                     <div className="flex gap-1">
                         <div className="size-2 md:size-2.5 bg-tertiary-black rounded-sm"></div>
-                        <div className="size-2 md:size-2.5 bg-green-1/30 rounded-sm"></div>
-                        <div className="size-2 md:size-2.5 bg-green-1/50 rounded-sm"></div>
-                        <div className="size-2 md:size-2.5 bg-green-1/70 rounded-sm"></div>
-                        <div className="size-2 md:size-2.5 bg-green-1 rounded-sm"></div>
+                        <div className="size-2 md:size-2.5 bg-[color-mix(in_srgb,var(--theme-primary)_30%,transparent)] rounded-sm"></div>
+                        <div className="size-2 md:size-2.5 bg-[color-mix(in_srgb,var(--theme-primary)_50%,transparent)] rounded-sm"></div>
+                        <div className="size-2 md:size-2.5 bg-[color-mix(in_srgb,var(--theme-primary)_70%,transparent)] rounded-sm"></div>
+                        <div className="size-2 md:size-2.5 bg-[var(--theme-primary)] rounded-sm"></div>
                     </div>
                     <span>More</span>
                 </div>

@@ -25,20 +25,7 @@ export default function SocialLinks({ className }) {
                             href={social.url}
                             target={social.id === "email" ? "_self" : "_blank"}
                             rel={social.id === "email" ? undefined : "noreferrer"}
-                            className="flex items-center gap-2 bg-secondary-black border border-green-1 rounded-lg px-3 py-2 text-white transition-all text-sm"
-                            style={{
-                                boxShadow: `2px 2px 0px 0px var(--color-green-1)`
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.color = 'var(--color-green-1)';
-                                e.currentTarget.style.boxShadow = '1px 1px 0px 0px var(--color-green-1)';
-                                e.currentTarget.style.transform = 'translate(2px, 2px)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.color = 'white';
-                                e.currentTarget.style.boxShadow = '2px 2px 0px 0px var(--color-green-1)';
-                                e.currentTarget.style.transform = 'translate(0px, 0px)';
-                            }}
+                            className="theme-accent-button flex items-center gap-2 bg-secondary-black border rounded-lg px-3 py-2 text-white text-sm"
                         >
                             <IconComponent size={16} />
                             {social.label}

@@ -13,7 +13,7 @@
 
     --color-white-faded: #fafafa;
 
-    --color-green-1: #35ff61;
+    --theme-primary: #35ff61;
     --color-blue-1: #3561ff;
     --color-red-1: #ff3561;
     --color-yellow-1: #ffff35;
@@ -83,7 +83,7 @@ body {
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    background: var(--color-green-1);
+    background: var(--theme-primary);
 }
 
 *::-webkit-scrollbar-corner {
@@ -109,7 +109,7 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: var(--color-green-1);
+    background: var(--theme-primary);
     background-clip: content-box;
 }
 
@@ -117,4 +117,26 @@ body {
 .custom-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: var(--color-tertiary-black) transparent;
+}
+
+.theme-accent-button {
+    border-color: var(--theme-primary);
+    box-shadow: 2px 2px 0 0 var(--theme-primary);
+    transition: transform 120ms ease, box-shadow 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+
+.theme-accent-button:hover {
+    color: var(--theme-primary);
+    box-shadow: 1px 1px 0 0 var(--theme-primary);
+    transform: translate(2px, 2px);
+}
+
+.theme-accent-chip {
+    box-shadow: 1px 1px 0 0 var(--theme-primary);
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.theme-accent-chip:hover {
+    box-shadow: 0 0 0 0 var(--theme-primary);
+    transform: translate(1px, 1px);
 }

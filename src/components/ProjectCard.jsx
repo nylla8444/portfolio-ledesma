@@ -4,7 +4,7 @@ import thumbnailMap from "../utils/ProjectThumbnails";
 
 export default function ProjectCard({ project }) {
     return (
-        <div className="bg-main-black border border-tertiary-black rounded-lg p-4 hover:border-green-1 transition-all duration-300 group flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full">
+        <div className="bg-main-black border border-tertiary-black rounded-lg p-4 hover:border-[var(--theme-primary)] transition-all duration-300 group flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full">
 
             {/* Project Image/Preview - Top on mobile, left on desktop */}
             <div className="w-full sm:w-24 h-32 sm:h-16 bg-secondary-black rounded-lg overflow-hidden flex-shrink-0">
@@ -25,7 +25,7 @@ export default function ProjectCard({ project }) {
             <div className="flex-1 w-full">
                 <div className="flex items-start justify-between">
                     <Link to={`/projects/${project.id}`} className="block">
-                        <h3 className="text-white font-jetbrains-mono font-semibold text-base hover:text-green-1 transition-colors mb-1">
+                        <h3 className="text-white font-jetbrains-mono font-semibold text-base hover:text-[var(--theme-primary)] transition-colors mb-1">
                             {project.title}
                         </h3>
                     </Link>
@@ -37,7 +37,7 @@ export default function ProjectCard({ project }) {
                                 href={project.sourceCodeUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-1.5 text-gray-400 hover:text-green-1 transition-colors"
+                                className="p-1.5 text-gray-400 hover:text-[var(--theme-primary)] transition-colors"
                                 aria-label="View source code"
                             >
                                 <Github size={18} />
@@ -49,7 +49,7 @@ export default function ProjectCard({ project }) {
                                 href={project.demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-1.5 text-gray-400 hover:text-green-1 transition-colors"
+                                className="p-1.5 text-gray-400 hover:text-[var(--theme-primary)] transition-colors"
                                 aria-label="View live project"
                             >
                                 <ExternalLink size={18} />
@@ -68,7 +68,7 @@ export default function ProjectCard({ project }) {
                 <div className="sm:hidden mt-2">
                     <Link
                         to={`/projects/${project.id}`}
-                        className="inline-flex items-center gap-1 text-xs text-green-1 hover:underline"
+                        className="inline-flex items-center gap-1 text-xs text-[var(--theme-primary)] hover:underline"
                     >
                         View details <ArrowRight size={12} />
                     </Link>
@@ -82,7 +82,7 @@ export default function ProjectCard({ project }) {
                         href={project.sourceCodeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-gray-400 hover:text-green-1 transition-colors"
+                        className="p-2 text-gray-400 hover:text-[var(--theme-primary)] transition-colors"
                         aria-label="View source code"
                     >
                         <Github size={18} />
@@ -94,7 +94,7 @@ export default function ProjectCard({ project }) {
                         href={project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-gray-400 hover:text-green-1 transition-colors"
+                        className="p-2 text-gray-400 hover:text-[var(--theme-primary)] transition-colors"
                         aria-label="View live project"
                     >
                         <ExternalLink size={18} />

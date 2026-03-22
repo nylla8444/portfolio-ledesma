@@ -5,7 +5,7 @@ import ColorSelect from "./ColorSelect";
 import thumbnailMap from "../utils/ProjectThumbnails";
 
 const statusConfig = {
-    completed: { icon: CheckCircle, color: 'text-green-1', bg: 'bg-green-1/10' },
+    completed: { icon: CheckCircle, color: 'text-[var(--theme-primary)]', bg: 'bg-[color-mix(in_srgb,var(--theme-primary)_10%,transparent)]' },
     'in-progress': { icon: Clock, color: 'text-yellow-400', bg: 'bg-yellow-400/10' },
     paused: { icon: AlertCircle, color: 'text-orange-400', bg: 'bg-orange-400/10' }
 };
@@ -21,9 +21,9 @@ function ProjectDetail() {
                 <p className="text-gray-400 mb-6">The project you're looking for doesn't exist.</p>
                 <Link
                     to="/"
-                    className="flex items-center gap-2 bg-secondary-black border border-green-1 rounded-lg px-4 py-2 text-white transition-all text-sm
-                    shadow-[2px_2px_0px_0px_var(--color-green-1)] hover:shadow-[1px_1px_0px_0px_var(--color-green-1)] 
-                    hover:translate-x-[1px] hover:translate-y-[1px] hover:text-green-1"
+                    className="flex items-center gap-2 bg-secondary-black border border-[var(--theme-primary)] rounded-lg px-4 py-2 text-white transition-all text-sm
+                    shadow-[2px_2px_0px_0px_var(--theme-primary)] hover:shadow-[1px_1px_0px_0px_var(--theme-primary)] 
+                    hover:translate-x-[1px] hover:translate-y-[1px] hover:text-[var(--theme-primary)]"
                 >
                     <ArrowLeft size={16} />
                     Back to Home
@@ -44,7 +44,7 @@ function ProjectDetail() {
             <div className="mb-8">
                 <Link
                     to="/"
-                    className="inline-flex items-center gap-2 text-gray-400 hover:text-green-1 transition-colors mb-6 text-sm"
+                    className="inline-flex items-center gap-2 text-gray-400 hover:text-[var(--theme-primary)] transition-colors mb-6 text-sm"
                 >
                     <ArrowLeft size={16} />
                     Back to Home
@@ -78,8 +78,8 @@ function ProjectDetail() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 bg-secondary-black border border-tertiary-black rounded-lg px-4 py-2 text-white transition-all text-sm
-                                shadow-[2px_2px_0px_0px_var(--color-tertiary-black)] hover:shadow-[1px_1px_0px_0px_var(--color-green-1)] 
-                                hover:translate-x-[1px] hover:translate-y-[1px] hover:text-green-1 hover:border-green-1"
+                                shadow-[2px_2px_0px_0px_var(--color-tertiary-black)] hover:shadow-[1px_1px_0px_0px_var(--theme-primary)] 
+                                hover:translate-x-[1px] hover:translate-y-[1px] hover:text-[var(--theme-primary)] hover:border-[var(--theme-primary)]"
                             >
                                 <Github size={16} />
                                 View Source Code
@@ -91,9 +91,9 @@ function ProjectDetail() {
                                 href={project.demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 bg-secondary-black border border-green-1 rounded-lg px-4 py-2 text-white transition-all text-sm
-                                shadow-[2px_2px_0px_0px_var(--color-green-1)] hover:shadow-[1px_1px_0px_0px_var(--color-green-1)] 
-                                hover:translate-x-[1px] hover:translate-y-[1px] hover:text-green-1"
+                                className="flex items-center gap-2 bg-secondary-black border border-[var(--theme-primary)] rounded-lg px-4 py-2 text-white transition-all text-sm
+                                shadow-[2px_2px_0px_0px_var(--theme-primary)] hover:shadow-[1px_1px_0px_0px_var(--theme-primary)] 
+                                hover:translate-x-[1px] hover:translate-y-[1px] hover:text-[var(--theme-primary)]"
                             >
                                 <ExternalLink size={16} />
                                 View Live Demo
@@ -141,7 +141,7 @@ function ProjectDetail() {
                             <ul className="space-y-3">
                                 {project.features.map((feature, index) => (
                                     <li key={index} className="flex items-start gap-3 text-gray-400 font-figtree">
-                                        <div className="w-1.5 h-1.5 bg-green-1 rounded-full mt-2 flex-shrink-0" />
+                                        <div className="w-1.5 h-1.5 bg-[var(--theme-primary)] rounded-full mt-2 flex-shrink-0" />
                                         {feature}
                                     </li>
                                 ))}
@@ -161,8 +161,8 @@ function ProjectDetail() {
                                     <span
                                         key={tech}
                                         className="bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 text-white text-sm
-                                        shadow-[1px_1px_0px_0px_var(--color-tertiary-black)] hover:shadow-[1px_1px_0px_0px_var(--color-green-1)] 
-                                        hover:text-green-1 transition-all"
+                                        shadow-[1px_1px_0px_0px_var(--color-tertiary-black)] hover:shadow-[1px_1px_0px_0px_var(--theme-primary)] 
+                                        hover:text-[var(--theme-primary)] transition-all"
                                     >
                                         {tech}
                                     </span>
@@ -179,7 +179,7 @@ function ProjectDetail() {
                                 {project.tags.map((tag) => (
                                     <span
                                         key={tag}
-                                        className="bg-green-1/10 border border-green-1/30 text-green-1 px-3 py-1 rounded-lg text-xs font-medium"
+                                        className="bg-[color-mix(in_srgb,var(--theme-primary)_10%,transparent)] border border-[color-mix(in_srgb,var(--theme-primary)_30%,transparent)] text-[var(--theme-primary)] px-3 py-1 rounded-lg text-xs font-medium"
                                     >
                                         {tag}
                                     </span>

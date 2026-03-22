@@ -24,7 +24,7 @@ export default function Home() {
                             {/* GitHub Profile Picture */}
                             <a href="https://github.com/nylla8444" target="_blank" rel="noreferrer">
                                 <img src={githubProfile}
-                                    className="rounded-full size-20 hover:border-2 border-green-1 transition-colors duration-300 cursor-pointer"
+                                    className="rounded-full size-20 hover:border-2 border-[var(--theme-primary)] transition-colors duration-300 cursor-pointer"
                                     alt="my github profile" />
                             </a>
 
@@ -46,8 +46,8 @@ export default function Home() {
                             <div className="flex items-center justify-center gap-2">
                                 <div className="flex items-center bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 gap-2">
                                     <div className="relative">
-                                        <div className="w-3 h-3 bg-green-1 rounded-full animate-pulse"></div>
-                                        <div className="absolute inset-0 w-3 h-3 bg-green-1 rounded-full animate-ping opacity-75"></div>
+                                        <div className="w-3 h-3 bg-[var(--theme-primary)] rounded-full animate-pulse"></div>
+                                        <div className="absolute inset-0 w-3 h-3 bg-[var(--theme-primary)] rounded-full animate-ping opacity-75"></div>
                                     </div>
                                     <span className="text-white font-medium text-xs">Available for work</span>
                                 </div>
@@ -55,7 +55,7 @@ export default function Home() {
                                 {/* Download CV */}
                                 <a href="/" target="_blank" rel="noopener noreferrer"
                                     className="flex items-center justify-center bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 text-white font-medium text-xs gap-2
-                                        shadow transition hover:border-green-1 focus:outline-none
+                                        shadow transition hover:border-[var(--theme-primary)] focus:outline-none
                                         whitespace-nowrap">
                                     <Download size={16} />
                                     Download CV
@@ -121,18 +121,7 @@ export default function Home() {
                         {techStackData.map((tech) => (
                             <div
                                 key={tech.id}
-                                className="flex items-center gap-2 bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 text-white transition-all text-sm"
-                                style={{
-                                    boxShadow: `1px 1px 0px 0px var(--color-green-1)`
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'translate(1px, 1px)';
-                                    e.currentTarget.style.boxShadow = '0px 0px 0px 0px var(--color-green-1)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'translate(0px, 0px)';
-                                    e.currentTarget.style.boxShadow = '1px 1px 0px 0px var(--color-green-1)';
-                                }}
+                                className="theme-accent-chip flex items-center gap-2 bg-secondary-black border border-tertiary-black rounded-lg px-3 py-2 text-white text-sm"
                             >
                                 <TechIcon id={tech.id} name={tech.name} />
                                 {tech.name}
