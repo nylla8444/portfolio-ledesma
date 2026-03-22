@@ -129,3 +129,5 @@ export default function ColorSelect() {
         </div>
     );
 }
+
+// TODO: make color select globally good. Currently the implementation sucks.

@@ -1,5 +1,6 @@
+import { GITHUB_USERNAME } from '../constants/github';
+
 const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
-const GITHUB_USERNAME = 'nylla8444'; // Your GitHub username
 
 const CONTRIBUTIONS_QUERY = `
   query($username: String!, $from: DateTime!, $to: DateTime!) {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getGitHubContributions, getGitHubProfile } from '../services/githubApi';
 import { Github, GitCommit, ChevronLeft, ChevronRight } from 'lucide-react';
+import { GITHUB_CACHE_KEYS, GITHUB_CACHE_TTL_MS } from '../constants/github';
 
 
 export default function GitHubStats() {
@@ -15,15 +16,15 @@ export default function GitHubStats() {
                 setLoading(true);
 
                 // Try to get from local storage first
-                const cachedData = localStorage.getItem('github-contributions');
-                const cachedProfile = localStorage.getItem('github-profile');
-                const cacheTime = localStorage.getItem('github-cache-time');
+                const cachedData = localStorage.getItem(GITHUB_CACHE_KEYS.contributions);
+                const cachedProfile = localStorage.getItem(GITHUB_CACHE_KEYS.profile);
+                const cacheTime = localStorage.getItem(GITHUB_CACHE_KEYS.cacheTime);
                 const currentYear = new Date().getFullYear().toString();
-                const cachedYear = localStorage.getItem('github-cache-year');
+                const cachedYear = localStorage.getItem(GITHUB_CACHE_KEYS.cacheYear);
 
                 // Check if cache is valid (today's date and current year)
                 const cacheIsValid = cacheTime &&
-                    (Date.now() - parseInt(cacheTime)) < 86400000 && // Less than 24 hours old
+                    (Date.now() - parseInt(cacheTime, 10)) < GITHUB_CACHE_TTL_MS &&
                     cachedYear === currentYear; // Same year
 
                 let contributionsData, profileData;
@@ -41,10 +42,10 @@ export default function GitHubStats() {
 
                     // Cache the data
                     if (contributionsData && profileData) {
-                        localStorage.setItem('github-contributions', JSON.stringify(contributionsData));
-                        localStorage.setItem('github-profile', JSON.stringify(profileData));
-                        localStorage.setItem('github-cache-time', Date.now().toString());
-                        localStorage.setItem('github-cache-year', currentYear);
+                        localStorage.setItem(GITHUB_CACHE_KEYS.contributions, JSON.stringify(contributionsData));
+                        localStorage.setItem(GITHUB_CACHE_KEYS.profile, JSON.stringify(profileData));
+                        localStorage.setItem(GITHUB_CACHE_KEYS.cacheTime, Date.now().toString());
+                        localStorage.setItem(GITHUB_CACHE_KEYS.cacheYear, currentYear);
                     }
                 }
 
