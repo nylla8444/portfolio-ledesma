@@ -67,6 +67,7 @@ export default function Home() {
                     </div>
 
                     {/* About Me */}
+                    {/* TODO: add a More button here that links to /about */}
                     <div className="mt-6 md:mr-5 xl:mt-10 space-y-4 text-sm xl:text-base font-jetbrains-mono text-gray-400 leading-6 text-left font-normal">
                         <p>I&apos;m <b className="text-white">Nylla</b>, a junior developer from the Philippines who&apos;s always <b className="text-white">building</b>, <b className="text-white">experimenting</b>, and <b className="text-white">learning</b>.</p>
                         <p>I dive into code not just to make things work, but to <b className="text-white">make them meaningful.</b> </p>
@@ -86,6 +87,7 @@ export default function Home() {
                 <section className="flex-1 ml-0 md:ml-5 mt-6 lg:mt-0 ">
                     <div className=" flex flex-col">
                         {/* Section Header */}
+                        {/* TODO: add a More button here that links to /projects */}
                         <div className="mb-2 flex">
                             <h2 className="text-white font-doto font-bold text-lg mr-5">Some things I've built</h2>
                             <p className="text-gray-400 text-sm font-jetbrains-mono mt-1">A showcase of my projects</p>
